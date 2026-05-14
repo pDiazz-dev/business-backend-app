@@ -1,7 +1,7 @@
 package org.technew.linkedin2.model.entities.user;
 
 public enum RoleType {
-    ADMIN,
-    COLABORATOR,
-    USER
+    ROLE_ADMIN,
+    ROLE_COLABORATOR,
+    ROLE_USER
 }
