@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: linkedin2
+  jwt:
+    key:
+      private: classpath:app.key
+      public: classpath:app.pub
