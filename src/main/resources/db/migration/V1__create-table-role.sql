@@ -1,0 +1,4 @@
+create table role (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    role_type ENUM('ROLE_ADMIN', 'ROLE_COLABORATOR', 'ROLE_USER') NOT NULL default 'ROLE_USER'
+);
