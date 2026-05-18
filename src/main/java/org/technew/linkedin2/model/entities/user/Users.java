@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 @Getter
 @Setter
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name", nullable = false)
@@ -27,10 +27,12 @@ public class Users {
 
     private String password;
 
+    private Boolean status = true;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "tb_user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
+            name = "role_users",
+            joinColumns = @JoinColumn(name = "users_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();

@@ -14,12 +14,13 @@ import java.time.Instant;
 public class RefreshToken {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(columnDefinition = "TEXT")
     private String token;
 
+    @Column(name = "expires_at")
     private Instant expiresAt;
 
     @ManyToOne
