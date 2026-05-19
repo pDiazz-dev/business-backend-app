@@ -9,7 +9,7 @@ import org.technew.linkedin2.model.entities.user.RoleType;
 import org.technew.linkedin2.model.entities.user.Users;
 import org.technew.linkedin2.model.repositories.User.Auth.RefreshTokenRepository;
 import org.technew.linkedin2.model.repositories.User.Auth.RoleRepository;
-import org.technew.linkedin2.model.repositories.User.UserRepository;
+import org.technew.linkedin2.model.repositories.User.UsersRepository;
 import org.technew.linkedin2.services.security.DTOs.*;
 import org.technew.linkedin2.services.security.tokens.TokenService;
 
@@ -19,7 +19,7 @@ import java.time.Instant;
 @Service
 public class AuthService {
 
-    private final UserRepository userRepository;
+    private final UsersRepository userRepository;
     private final AuthenticationManager authenticationManager;
     private final TokenService tokenService;
     private final RoleRepository roleRepository;

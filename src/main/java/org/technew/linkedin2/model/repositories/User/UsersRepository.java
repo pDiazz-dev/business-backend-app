@@ -7,7 +7,7 @@ import org.technew.linkedin2.model.entities.user.Users;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<Users, Long> {
+public interface UsersRepository extends JpaRepository<Users, Long> {
     Optional<Users> findByEmail(String email);
     Boolean existsByEmail(String email);
 }
