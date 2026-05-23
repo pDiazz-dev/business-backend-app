@@ -32,7 +32,7 @@ public class AuthService {
         var usernamePassword = new UsernamePasswordAuthenticationToken(authLoginDTO.email(),authLoginDTO.password());
         authenticationManager.authenticate(usernamePassword);
 
-        String acessToken = tokenService.generateAcessToken(user);
+        String acessToken = tokenService.generateAccessToken(user);
         String refreshToken = tokenService.generateRefreshToken(user);
 
         return new LoginResponseDTO(acessToken, refreshToken);
@@ -63,7 +63,7 @@ public class AuthService {
 
         Users user = refreshToken.getUsers();
         refreshTokenRepository.delete(refreshToken);
-        String newAcessToken = tokenService.generateAcessToken(user);
+        String newAcessToken = tokenService.generateAccessToken(user);
         String newRefreshToken = tokenService.generateRefreshToken(user);
 
         return new RefreshTokenResponseDTO(newAcessToken, newRefreshToken);

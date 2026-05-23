@@ -44,7 +44,7 @@ public class TokenService {
     }
 
     // GENERATE ACESS TOKEN
-    public String generateAcessToken(Users users){
+    public String generateAccessToken(Users users){
 
         String authorities = users.getRoles().stream()
                 .map(role -> role.getRoleType().name())
