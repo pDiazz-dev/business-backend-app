@@ -52,7 +52,7 @@ public class TokenService {
 
         Map<String, Object> claims;
         claims = Map.of(
-                "authorites", authorities
+                "authorities", authorities
         );
         return generateToken(users, claims, ACCESS_TOKEN_EXPIRES);
     }

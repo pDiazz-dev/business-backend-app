@@ -25,6 +25,6 @@ public class Address {
     private String neighborhood;
 
     @ManyToOne
-    @JoinColumn(name = "country_id")
+    @JoinColumn(name = "city_id")
     private Cities cities;
 }

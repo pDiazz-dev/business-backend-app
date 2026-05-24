@@ -19,6 +19,8 @@ public class States {
     @JoinColumn(name = "country_id")
     private Countries countries;
 
+    private String name;
+
     @OneToMany(mappedBy = "states", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Cities> cities;
 }
