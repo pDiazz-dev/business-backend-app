@@ -14,10 +14,10 @@ public class Enterprise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+    private String cnpj;
+
     @ManyToOne
     @JoinColumn(name = "collaborator_id")
     private Collaborator collaborator;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address address;
 }
