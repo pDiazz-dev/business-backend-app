@@ -18,6 +18,7 @@ public class CollaboratorController {
 
     @PostMapping
     public ResponseEntity<Void> newCollaborator(){
+        collaboratorService.newCollaborator();
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }
