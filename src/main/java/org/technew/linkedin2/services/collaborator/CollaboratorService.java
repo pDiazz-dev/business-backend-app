@@ -16,7 +16,7 @@ public class CollaboratorService {
     private final UserLoggedService userLoggedService;
     private final RolesService rolesService;
 
-    public Collaborator newCollaborator() {
+    public void newCollaborator() {
         var userAuthetication = userLoggedService.getLoggedUser();
 
         if (collaboratorRepository.existsById(userAuthetication.getId())) {
@@ -26,6 +26,6 @@ public class CollaboratorService {
         rolesService.attachRole(userAuthetication, RoleType.ROLE_COLLABORATOR);
         Collaborator collaborator = new Collaborator();
         collaborator.setUsers(userAuthetication);
-        return collaboratorRepository.save(collaborator);
+        collaboratorRepository.save(collaborator);
     }
 }
