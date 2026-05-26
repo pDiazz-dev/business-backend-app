@@ -1,0 +1,37 @@
+## Auth System
+### Features
+- User registration with hashed password
+- JWT authentication with access and refresh tokens
+
+## Roles and Permissions
+### Features
+- ROLE_ADMIN: Full access to all resources and user management
+- ROLE_COLLABORATOR: Access to enterprise management and related resources
+- ROLE_WORKER: Access to make macth for a enterprise and related resources
+- ROLE_USER: Basic access only views to user-specific resources
+
+## Security
+### Features
+- Passwords are hashed using bcrypt before storage
+- JWT tokens are signed with a secure secret key and have an expiration time
+- Refresh tokens are stored securely in the database and can be revoked
+
+## Collaborator and Enterprise Management
+### Features
+- Collaborators can create and manage enterprise
+- Each enterprise has a CNPJ and is associated with a collaborator
+- Enterprise can have an address with detailed information (street, number, complement, neighborhood, city)
+- Collaborator can and create their job and vacancies view applications
+- jobs and vacancies(should has number vacancies) should be created with skills and requirements
+
+
+#### Endpoints
+- POST /auth/register — Create a new user
+- POST /auth/login — Authenticate user
+- POST /auth/refresh — Refresh JWT access token
+- POST /collaborator — Create a new collaborator
+- POST /enterprise — Create a new enterprise (collaborator only)
+- POST /enterprise/jobs — Create a new job (collaborator only)
+- POST /enterprise/vacancies — Create a new vacancy (collaborator only)
+
+
