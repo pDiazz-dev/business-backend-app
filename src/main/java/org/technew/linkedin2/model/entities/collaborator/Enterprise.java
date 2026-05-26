@@ -3,7 +3,9 @@ package org.technew.linkedin2.model.entities.collaborator;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.technew.linkedin2.model.entities.collaborator.address.Address;
+import org.technew.linkedin2.model.entities.jobs.Jobs;
+
+import java.util.List;
 
 @Entity
 @Table(name = "enterprise")
@@ -20,4 +22,7 @@ public class Enterprise {
     @ManyToOne
     @JoinColumn(name = "collaborator_id")
     private Collaborator collaborator;
+
+    @OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Jobs> jobs;
 }
