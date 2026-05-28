@@ -43,8 +43,8 @@ public class JobsService {
         }
 
         Jobs job = new Jobs();
-        job.setPosition(dto.position().trim());
-        job.setDescription(dto.description().trim());
+        job.setPosition(dto.position().trim().toUpperCase());
+        job.setDescription(dto.description().trim().toUpperCase());
         job.setEnterprise(enterprise);
         job.setSkills(skills);
 

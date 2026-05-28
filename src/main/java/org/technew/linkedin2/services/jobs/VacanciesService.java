@@ -32,7 +32,7 @@ public class VacanciesService {
         }
 
         Vacancies vacancy = new Vacancies();
-        vacancy.setNumberVacancies(dto.numberVacancies());
+        vacancy.setVacanciesNumber(dto.vacanciesNumber());
         vacancy.setJobs(job);
 
         vacanciesRepository.save(vacancy);

@@ -17,15 +17,14 @@ public class CollaboratorService {
     private final RolesService rolesService;
 
     public void newCollaborator() {
-        var userAuthetication = userLoggedService.getLoggedUser();
+        var userAuthentication = userLoggedService.getLoggedUser();
 
-        if (collaboratorRepository.existsById(userAuthetication.getId())) {
+        if (collaboratorRepository.existsById(userAuthentication.getId())) {
             throw new RuntimeException("User already has a collaborator profile");
         }
-
-        rolesService.attachRole(userAuthetication, RoleType.ROLE_COLLABORATOR);
+        rolesService.attachRole(userAuthentication, RoleType.ROLE_COLLABORATOR);
         Collaborator collaborator = new Collaborator();
-        collaborator.setUsers(userAuthetication);
+        collaborator.setUsers(userAuthentication);
         collaboratorRepository.save(collaborator);
     }
 }

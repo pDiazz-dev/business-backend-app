@@ -15,8 +15,8 @@ public class Vacancies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "number_vacancies")
-    private Integer numberVacancies;
+    @Column(name = "vacancies_number")
+    private Integer vacanciesNumber;
 
     private Boolean status = true;
 

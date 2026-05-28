@@ -17,6 +17,6 @@ public class Skills {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "skill_topic_id")
+    @JoinColumn(name = "topic_id")
     private Topics topics;
 }

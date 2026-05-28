@@ -8,6 +8,6 @@ public record VacancyDTO(
         Long jobId,
         @NotNull
         @Min(1)
-        Integer numberVacancies
+        Integer vacanciesNumber
 ) {
 }
