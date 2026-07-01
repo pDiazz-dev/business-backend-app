@@ -1,5 +1,6 @@
 package org.technew.linkedin2.controllers.auth;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,16 +20,16 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@RequestBody AuthLoginDTO authLoginDTO){
+    public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody AuthLoginDTO authLoginDTO){
         return ResponseEntity.ok(authService.login(authLoginDTO));
     }
     @PostMapping("/register")
-    public ResponseEntity<Void> register(@RequestBody RegisterDTO registerDTO){
+    public ResponseEntity<Void> register(@Valid @RequestBody RegisterDTO registerDTO){
         authService.register(registerDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
     @PostMapping("/refresh")
-    public ResponseEntity<RefreshTokenResponseDTO> refresh(@RequestBody RefreshTokenDTO refreshTokenDTO){
+    public ResponseEntity<RefreshTokenResponseDTO> refresh(@Valid @RequestBody RefreshTokenDTO refreshTokenDTO){
         return ResponseEntity.ok(authService.refresh(refreshTokenDTO));
     }
 }

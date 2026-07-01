@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
-import org.technew.linkedin2.config.rolesCript.jwt.JwtConverterRole;
+import org.technew.linkedin2.config.rolesScript.jwt.JwtConverterRole;
 
 @Configuration
 @EnableWebSecurity

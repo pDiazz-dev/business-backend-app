@@ -1,5 +1,6 @@
 package org.technew.linkedin2.controllers.jobs;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public class JobsController {
     private final JobsService jobsService;
 
     @PostMapping
-    public ResponseEntity<Void> newJob(@RequestBody JobDTO jobDTO){
+    public ResponseEntity<Void> newJob(@Valid @RequestBody JobDTO jobDTO){
         jobsService.newJob(jobDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

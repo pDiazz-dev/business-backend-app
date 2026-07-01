@@ -1,4 +1,4 @@
-package org.technew.linkedin2.config.rolesCript.jwt;
+package org.technew.linkedin2.config.rolesScript.jwt;
 
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;

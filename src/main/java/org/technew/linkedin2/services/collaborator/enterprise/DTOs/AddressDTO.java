@@ -16,8 +16,6 @@ public record AddressDTO(
         @NotBlank(message = "State cannot be blank")
         String state,
         @NotBlank(message = "Country cannot be blank")
-        String country,
-        @NotBlank
-        String countryCode
+        String country
 ) {
 }

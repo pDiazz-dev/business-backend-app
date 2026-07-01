@@ -16,7 +16,6 @@ public class Countries {
     private Long id;
 
     private String name;
-    private String code;
 
     @OneToMany(mappedBy = "countries", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<States> states;

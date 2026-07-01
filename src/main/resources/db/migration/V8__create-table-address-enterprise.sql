@@ -1,7 +1,6 @@
 create table countries(
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name varchar(255) not null,
-    code varchar(10) not null,
     created_at timestamp not null default current_timestamp,
     updated_at timestamp not null default current_timestamp
 );

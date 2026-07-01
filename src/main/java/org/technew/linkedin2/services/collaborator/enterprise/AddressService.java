@@ -20,11 +20,10 @@ public class AddressService {
     private final StatesRepository statesRepository;
     private final CitiesRepository citiesRepository;
 
-    public Countries countries(String name, String code){
+    public Countries countries(String name){
         if(!countriesRepository.existsByName(name)){
             Countries countries = new Countries();
             countries.setName(name.trim().toUpperCase());
-            countries.setCode(code.trim().toUpperCase());
             return countriesRepository.save(countries);
         }
         return countriesRepository.findByName(name).
@@ -54,7 +53,7 @@ public class AddressService {
     }
 
     public Address newAddress(AddressDTO addressDTO){
-        var countries = countries(addressDTO.country(), addressDTO.countryCode());
+        var countries = countries(addressDTO.country());
         var states = states(addressDTO.state(), countries);
         var cities = cities(addressDTO.city(), states);
 

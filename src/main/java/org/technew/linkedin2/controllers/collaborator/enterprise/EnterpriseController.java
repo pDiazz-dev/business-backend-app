@@ -1,5 +1,6 @@
 package org.technew.linkedin2.controllers.collaborator.enterprise;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class EnterpriseController {
     private final EnterpriseService enterpriseService;
 
     @PostMapping
-    public ResponseEntity<Void> newEnterprise(@RequestBody RequestEnterprise requestEnterprise){
+    public ResponseEntity<Void> newEnterprise(@Valid @RequestBody RequestEnterprise requestEnterprise){
         enterpriseService.newEnterprise(requestEnterprise.addressDTO(), requestEnterprise.enterpriseDTO());
         return ResponseEntity.ok().build();
     }

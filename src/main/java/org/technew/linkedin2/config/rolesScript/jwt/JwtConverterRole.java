@@ -1,4 +1,4 @@
-package org.technew.linkedin2.config.rolesCript.jwt;
+package org.technew.linkedin2.config.rolesScript.jwt;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
